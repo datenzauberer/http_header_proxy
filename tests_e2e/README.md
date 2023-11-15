@@ -1,7 +1,6 @@
 
 # Description
 
-A TestService shows 
 The http_header_proxy (SystemUnderTest) is tested by calling the TestService.
 
 http_header_proxy (SystemUnderTest)
