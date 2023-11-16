@@ -22,11 +22,11 @@ popd
 
 # Execute Tests
 rm memory_usage.txt
-num_of_tests=100
-for ((i = 1; i <= 100; i++)); do
+num_of_tests=10000
+for ((i = 1; i <= num_of_tests; i++)); do
     echo DATAPOINT: $i
     # this calls the service via proxy (to check if memory is increased)
-    http_proxy=http://127.0.0.1:8100 curl -v http://127.0.0.1:5000/memory/http_header_proxy
+    http_proxy=http://127.0.0.1:8100 curl -v http://127.0.0.1:5000/large_response
     # thist checks if the memory was increased
     curl http://127.0.0.1:5000/memory/http_header_proxy | grep memory_usage_mb >> memory_usage.txt
 done
