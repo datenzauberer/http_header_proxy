@@ -14,10 +14,11 @@
 
 # Start TestService
 python service_show_memory.py &
-pid_sut=$!
+pid_ser=$!
 # Start http_header_proxy
 pushd ..
 cargo run &
+pid_sut=$!
 popd
 
 # Execute Tests
